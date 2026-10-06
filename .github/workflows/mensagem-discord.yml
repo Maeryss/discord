@@ -1,4 +1,15 @@
-🥖 Regras da Padaria
+name: Enviar Mensagem como Pessoa
+
+on: [push]
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      
+name: Enviar Texto Limpo
+      run: |
+        curl -H "Content-Type: application/json" \-X POST \-d '{"content": "🥖 Regras da Padaria
 
 Seja bem-vindo à Padaria! Este é um espaço para conversar, compartilhar arte, acompanhar a Mya e conhecer outras pessoas da comunidade.
 
@@ -103,3 +114,4 @@ A ideia é simples:
 Faça da Padaria um lugar onde você também gostaria de estar. 🥖
 
 Divirta-se, compartilhe sua arte, converse e aproveite a comunidade!
+"}' \${{ secrets.DISCORD_WEBHOOK }}
